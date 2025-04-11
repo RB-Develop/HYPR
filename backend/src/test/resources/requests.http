@@ -1,3 +1,21 @@
 ### Test chat endpoint
 GET http://localhost:8080/ai/chat?question=What is Kotlin?
 Accept: application/json
+
+### Generate workout
+POST http://localhost:8080/hypr/workout
+Content-Type: application/json
+
+{
+  "type": "CROSSFIT",
+  "participants": 0,
+  "durationMinutes": 0,
+  "gear": [],
+  "targetStimulus": [],
+  "user": {
+    "gender": "",
+    "age": "",
+    "weightKilos": "",
+    "level": "BEGINNER"
+  }
+}
