@@ -18,7 +18,7 @@ class WorkoutPromptBuilder {
             if (prompt.type != WorkoutType.CROSSFIT) {
                 "- Create a full program including a warming-up, but excluding a cool-down"
             } else {
-                "- Create a full program including a warming-up, strength accessories block, and a CrossFit style workout, but excluding a cool-down"
+                "- Create a full program including a short warming-up of not more than 5 minutes, strength accessories block of at least 60 minutes, and a CrossFit style workout in the time left"
             }
         } else {
             """
@@ -50,6 +50,7 @@ class WorkoutPromptBuilder {
             - Format the workout plan as JSON only — no explanation or extra text.
             - Use camelCase keys for consistency.
             - Avoid equipment switching overload.
+            - Never include a cool-down.
             """;
     }
 }
