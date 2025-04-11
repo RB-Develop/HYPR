@@ -12,11 +12,14 @@ import { Box } from '@/components/ui/box';
 export const TargetStimulus = ({
   onChange,
 }: {
-  onChange: (value: string) => void;
+  onChange: (value: string[]) => void;
 }) => {
+  const handleChange = (value: string) => {
+    onChange([value]);
+  };
   return (
     <Box className="mt-2">
-      <RadioGroup onChange={onChange}>
+      <RadioGroup onChange={handleChange}>
         <Text>What will be your goal for today?</Text>
         <Radio value="cardio" size="md">
           <RadioIndicator>
