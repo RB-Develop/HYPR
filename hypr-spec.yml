@@ -23,9 +23,7 @@ paths:
           content:
             '*/*':
               schema:
-                type: object
-                additionalProperties:
-                  type: string
+                $ref: "#/components/schemas/Workout"
   /ai/chat:
     get:
       tags:
@@ -101,3 +99,65 @@ components:
       - gender
       - level
       - weightKilos
+    Workout:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        duration:
+          type: string
+        components:
+          type: array
+          items:
+            $ref: "#/components/schemas/WorkoutSession"
+      required:
+      - components
+      - description
+      - duration
+      - title
+    WorkoutComponent:
+      type: object
+      properties:
+        name:
+          type: string
+        instruction:
+          type: string
+        repetitions:
+          type: integer
+          format: int32
+        sets:
+          type: integer
+          format: int32
+        weightKilos:
+          type: integer
+          format: int32
+        distance:
+          type: string
+        exerciseDuration:
+          type: string
+        restDuration:
+          type: string
+      required:
+      - exerciseDuration
+      - name
+    WorkoutSession:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        exerciseDuration:
+          type: string
+        targetRepetitions:
+          type: integer
+          format: int32
+        components:
+          type: array
+          items:
+            $ref: "#/components/schemas/WorkoutComponent"
+      required:
+      - exerciseDuration
+      - name

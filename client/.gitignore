@@ -4,7 +4,7 @@
 node_modules/
 
 # gen files
-src/gen
+/gen
 
 # Expo
 .expo/
