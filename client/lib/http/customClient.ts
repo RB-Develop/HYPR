@@ -1,4 +1,4 @@
-import { EXPO_API_URL } from '@/lib/environment/environment';
+import { EXPO_API_URL } from '../environment/environment';
 
 type HTTPMethod =
   | 'GET'

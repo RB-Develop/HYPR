@@ -9,15 +9,15 @@ import {
   SelectDragIndicator,
   SelectDragIndicatorWrapper,
   SelectItem,
-} from '@/components/ui/select';
+} from '../ui/select';
 
-import { Text } from '@/components/ui/text';
-import { ChevronDownIcon } from '@/components/ui/icon';
+import { Text } from '../ui/text';
+import { ChevronDownIcon } from '../ui/icon';
 
-export const WorkoutSelect = () => {
+export const NumParticipantsSelect = () => {
   return (
     <>
-      <Text>Select your workout type</Text>
+      <Text>How many people working out?</Text>
       <Select>
         <SelectTrigger variant="outline" size="md">
           <SelectInput placeholder="Select option" />
@@ -29,9 +29,11 @@ export const WorkoutSelect = () => {
             <SelectDragIndicatorWrapper>
               <SelectDragIndicator />
             </SelectDragIndicatorWrapper>
-            <SelectItem label="Crossfit" value="CROSSFIT" />
-            <SelectItem label="Running" value="RUNNING" />
-            <SelectItem label="Gym" value="GYM" />
+            <SelectItem label="1" value="1" />
+            <SelectItem label="2" value="2" />
+            <SelectItem label="3" value="3" />
+            <SelectItem label="4" value="4" />
+            <SelectItem label="5" value="5" />
           </SelectContent>
         </SelectPortal>
       </Select>

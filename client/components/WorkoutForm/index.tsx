@@ -1,4 +1,4 @@
-import { Box } from '@/components/ui/box';
+import { Box } from '../ui/box';
 import { WorkoutSelect } from '@/components/WorkoutSelect';
 
 export const WorkoutForm = () => {
