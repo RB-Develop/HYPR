@@ -18,12 +18,18 @@ import { Box } from '@/components/ui/box';
 export const DurationSelect = ({
   onChange,
 }: {
-  onChange: (value: string) => void;
+  onChange: (value: number) => void;
 }) => {
+  const handleChange = (value: string) => {
+    const parsedValue = parseInt(value, 10);
+    if (!isNaN(parsedValue)) {
+      onChange(parsedValue);
+    }
+  };
   return (
     <Box className="mt-2">
       <Text>For how long do you want your training to be?</Text>
-      <Select onValueChange={onChange}>
+      <Select onValueChange={handleChange}>
         <SelectTrigger variant="outline" size="md">
           <SelectInput placeholder="Select option" />
           <SelectIcon className="mr-3" as={ChevronDownIcon} />

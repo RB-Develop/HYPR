@@ -10,10 +10,10 @@ import { Button, ButtonText } from '@/components/ui/button';
 
 export interface WorkoutData {
   workoutType: string;
-  numParticipants: string;
-  duration: string;
+  numParticipants: number;
+  duration: number;
   gear: string[];
-  targetStimulus: string;
+  targetStimulus: string[];
 }
 
 export const WorkoutForm = ({
@@ -22,10 +22,10 @@ export const WorkoutForm = ({
   onSave: (values: WorkoutData) => void;
 }) => {
   const [workoutType, setWorkoutType] = useState<string>('');
-  const [numParticipants, setNumParticipants] = useState<string>('');
-  const [duration, setDuration] = useState<string>('');
+  const [numParticipants, setNumParticipants] = useState<number>(1);
+  const [duration, setDuration] = useState<number>(0);
   const [gear, setGear] = useState<string[]>([]);
-  const [targetStimulus, setTargetStimulus] = useState<string>('');
+  const [targetStimulus, setTargetStimulus] = useState<string[]>([]);
 
   const handleSave = () => {
     onSave({

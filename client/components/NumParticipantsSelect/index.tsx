@@ -18,12 +18,18 @@ import { Box } from '@/components/ui/box';
 export const NumParticipantsSelect = ({
   onChange,
 }: {
-  onChange: (value: string) => void;
+  onChange: (value: number) => void;
 }) => {
+  const handleChange = (value: string) => {
+    const numValue = parseInt(value, 10);
+    if (!isNaN(numValue)) {
+      onChange(numValue);
+    }
+  };
   return (
     <Box className="mt-2">
       <Text>How many people working out?</Text>
-      <Select onValueChange={onChange}>
+      <Select onValueChange={handleChange}>
         <SelectTrigger variant="outline" size="md">
           <SelectInput placeholder="Select option" />
           <SelectIcon className="mr-3" as={ChevronDownIcon} />
