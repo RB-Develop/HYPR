@@ -15,14 +15,14 @@ import { Text } from '@/components/ui/text';
 import { ChevronDownIcon } from '@/components/ui/icon';
 import { Box } from '@/components/ui/box';
 
-export const WorkoutSelect = ({
+export const DurationSelect = ({
   onChange,
 }: {
   onChange: (value: string) => void;
 }) => {
   return (
-    <Box className="mt-1">
-      <Text>Select your workout type</Text>
+    <Box className="mt-2">
+      <Text>For how long do you want your training to be?</Text>
       <Select onValueChange={onChange}>
         <SelectTrigger variant="outline" size="md">
           <SelectInput placeholder="Select option" />
@@ -34,9 +34,11 @@ export const WorkoutSelect = ({
             <SelectDragIndicatorWrapper>
               <SelectDragIndicator />
             </SelectDragIndicatorWrapper>
-            <SelectItem label="Crossfit" value="CROSSFIT" />
-            <SelectItem label="Running" value="RUNNING" />
-            <SelectItem label="Gym" value="GYM" />
+            <SelectItem label="10 mins" value="10" />
+            <SelectItem label="20 mins" value="20" />
+            <SelectItem label="30 mins" value="30" />
+            <SelectItem label="60 mins" value="60" />
+            <SelectItem label="90 mins" value="90" />
           </SelectContent>
         </SelectPortal>
       </Select>

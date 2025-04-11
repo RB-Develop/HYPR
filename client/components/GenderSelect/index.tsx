@@ -15,14 +15,14 @@ import { Text } from '@/components/ui/text';
 import { ChevronDownIcon } from '@/components/ui/icon';
 import { Box } from '@/components/ui/box';
 
-export const WorkoutSelect = ({
+export const GenderSelect = ({
   onChange,
 }: {
   onChange: (value: string) => void;
 }) => {
   return (
-    <Box className="mt-1">
-      <Text>Select your workout type</Text>
+    <Box className="mt-2">
+      <Text>Select your gender</Text>
       <Select onValueChange={onChange}>
         <SelectTrigger variant="outline" size="md">
           <SelectInput placeholder="Select option" />
@@ -34,9 +34,8 @@ export const WorkoutSelect = ({
             <SelectDragIndicatorWrapper>
               <SelectDragIndicator />
             </SelectDragIndicatorWrapper>
-            <SelectItem label="Crossfit" value="CROSSFIT" />
-            <SelectItem label="Running" value="RUNNING" />
-            <SelectItem label="Gym" value="GYM" />
+            <SelectItem label="Male" value="MALE" />
+            <SelectItem label="Female" value="FEMALE" />
           </SelectContent>
         </SelectPortal>
       </Select>
