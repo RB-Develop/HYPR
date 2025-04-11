@@ -9,16 +9,21 @@ import {
   SelectDragIndicator,
   SelectDragIndicatorWrapper,
   SelectItem,
-} from '../ui/select';
+} from '@/components/ui/select';
 
-import { Text } from '../ui/text';
+import { Text } from '@/components/ui/text';
 import { ChevronDownIcon } from '../ui/icon';
+import { Box } from '@/components/ui/box';
 
-export const NumParticipantsSelect = () => {
+export const NumParticipantsSelect = ({
+  onChange,
+}: {
+  onChange: (value: string) => void;
+}) => {
   return (
-    <>
+    <Box className="mt-2">
       <Text>How many people working out?</Text>
-      <Select>
+      <Select onValueChange={onChange}>
         <SelectTrigger variant="outline" size="md">
           <SelectInput placeholder="Select option" />
           <SelectIcon className="mr-3" as={ChevronDownIcon} />
@@ -37,6 +42,6 @@ export const NumParticipantsSelect = () => {
           </SelectContent>
         </SelectPortal>
       </Select>
-    </>
+    </Box>
   );
 };

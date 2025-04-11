@@ -15,14 +15,14 @@ import { Text } from '@/components/ui/text';
 import { ChevronDownIcon } from '@/components/ui/icon';
 import { Box } from '@/components/ui/box';
 
-export const WorkoutSelect = ({
+export const LevelSelect = ({
   onChange,
 }: {
   onChange: (value: string) => void;
 }) => {
   return (
-    <Box className="mt-1">
-      <Text>Select your workout type</Text>
+    <Box className="mt-2">
+      <Text>What is your level?</Text>
       <Select onValueChange={onChange}>
         <SelectTrigger variant="outline" size="md">
           <SelectInput placeholder="Select option" />
@@ -34,9 +34,10 @@ export const WorkoutSelect = ({
             <SelectDragIndicatorWrapper>
               <SelectDragIndicator />
             </SelectDragIndicatorWrapper>
-            <SelectItem label="Crossfit" value="CROSSFIT" />
-            <SelectItem label="Running" value="RUNNING" />
-            <SelectItem label="Gym" value="GYM" />
+            <SelectItem label="Beginner" value="BEGINNER" />
+            <SelectItem label="Intermediate" value="INTERMEDIATE" />
+            <SelectItem label="Experienced" value="EXPERIENCED" />
+            <SelectItem label="Elite" value="ELITE" />
           </SelectContent>
         </SelectPortal>
       </Select>
