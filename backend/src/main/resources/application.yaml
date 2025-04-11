@@ -1,0 +1,13 @@
+spring:
+  application.name: HYPR
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        model: gpt-4-turbo
+        temperature: 0.7
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog.yaml
