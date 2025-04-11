@@ -18,8 +18,10 @@ export interface WorkoutData {
 
 export const WorkoutForm = ({
   onSave,
+  isPending,
 }: {
   onSave: (values: WorkoutData) => void;
+  isPending: boolean;
 }) => {
   const [workoutType, setWorkoutType] = useState<string>('');
   const [numParticipants, setNumParticipants] = useState<number>(1);

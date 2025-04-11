@@ -14,6 +14,7 @@ import {
 import { Text } from '@/components/ui/text';
 import { ChevronDownIcon } from '@/components/ui/icon';
 import { Box } from '@/components/ui/box';
+import { WorkoutUserLevel } from '@/gen/model';
 
 export const LevelSelect = ({
   onChange,
@@ -34,10 +35,16 @@ export const LevelSelect = ({
             <SelectDragIndicatorWrapper>
               <SelectDragIndicator />
             </SelectDragIndicatorWrapper>
-            <SelectItem label="Beginner" value="BEGINNER" />
-            <SelectItem label="Intermediate" value="INTERMEDIATE" />
-            <SelectItem label="Experienced" value="EXPERIENCED" />
-            <SelectItem label="Elite" value="ELITE" />
+            <SelectItem label="Beginner" value={WorkoutUserLevel.BEGINNER} />
+            <SelectItem
+              label="Intermediate"
+              value={WorkoutUserLevel.INTERMEDIATE}
+            />
+            <SelectItem
+              label="Experienced"
+              value={WorkoutUserLevel.EXPERIENCED}
+            />
+            <SelectItem label="Elite" value={WorkoutUserLevel.ELITE} />
           </SelectContent>
         </SelectPortal>
       </Select>

@@ -6,17 +6,18 @@ import { Card } from '@/components/ui/card';
 import { Divider } from '@/components/ui/divider';
 import { HStack } from '@/components/ui/hstack';
 import { Text } from '@/components/ui/text';
+import React from 'react';
 
 export default function Workout({ stages }: { stages: WorkoutSections[] }) {
   return (
     <ScrollView>
       <View className="pb-[80px] pt-8">
         <VStack space="md" className="px-4" reversed={false}>
-          {stages.map((stage, index) => (
-            <>
-              <Stage key={stage.name} stage={stage} />
+          {stages?.map((stage, index) => (
+            <React.Fragment key={stage.name}>
+              <Stage stage={stage} />
               {stages.length !== index + 1 && <Divider className="my-4" />}
-            </>
+            </React.Fragment>
           ))}
         </VStack>
       </View>
