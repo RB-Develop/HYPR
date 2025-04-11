@@ -1,15 +1,10 @@
-import { Input, InputField } from '../ui/Input';
+import { Box } from '@/components/ui/box';
+import { WorkoutSelect } from '@/components/WorkoutSelect';
 
 export const WorkoutForm = () => {
   return (
-    <Input
-      variant="outline"
-      size="md"
-      isDisabled={false}
-      isInvalid={false}
-      isReadOnly={false}
-    >
-      <InputField placeholder="Enter Text here..." />
-    </Input>
+    <Box className="p-4">
+      <WorkoutSelect />
+    </Box>
   );
 };
