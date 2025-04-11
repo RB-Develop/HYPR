@@ -1,13 +1,13 @@
 import { ScrollView, View } from 'react-native';
 import { VStack } from '@/components/ui/vstack';
 import { Heading } from '@/components/ui/heading';
-import { WorkoutComponent, WorkoutSession } from '@/gen/model';
+import { WorkoutComponent, type WorkoutSections } from '@/gen/model';
 import { Card } from '@/components/ui/card';
 import { Divider } from '@/components/ui/divider';
 import { HStack } from '@/components/ui/hstack';
 import { Text } from '@/components/ui/text';
 
-export default function Workout({ stages }: { stages: WorkoutSession[] }) {
+export default function Workout({ stages }: { stages: WorkoutSections[] }) {
   return (
     <ScrollView>
       <View className="pb-[80px] pt-8">
@@ -24,7 +24,7 @@ export default function Workout({ stages }: { stages: WorkoutSession[] }) {
   );
 }
 
-function Stage({ stage }: { stage: WorkoutSession }) {
+function Stage({ stage }: { stage: WorkoutSections }) {
   return (
     <VStack space="md">
       <VStack space="sm" className="mb-4">
