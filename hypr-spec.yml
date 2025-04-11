@@ -1,0 +1,103 @@
+openapi: 3.1.0
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /hypr/workout:
+    post:
+      tags:
+      - chat-controller
+      operationId: generateWorkout
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WorkoutPrompt"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+  /ai/chat:
+    get:
+      tags:
+      - chat-controller
+      operationId: chat
+      parameters:
+      - name: question
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+                additionalProperties:
+                  type: string
+components:
+  schemas:
+    WorkoutPrompt:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - CROSSFIT
+          - RUNNING
+          - FITNESS
+        participants:
+          type: integer
+          format: int32
+        durationMinutes:
+          type: integer
+          format: int32
+        gear:
+          type: array
+          items:
+            type: string
+        targetStimulus:
+          type: array
+          items:
+            type: string
+        user:
+          $ref: "#/components/schemas/WorkoutUser"
+      required:
+      - durationMinutes
+      - gear
+      - participants
+      - targetStimulus
+      - type
+      - user
+    WorkoutUser:
+      type: object
+      properties:
+        gender:
+          type: string
+        age:
+          type: string
+        weightKilos:
+          type: string
+        level:
+          type: string
+          enum:
+          - BEGINNER
+          - INTERMEDIATE
+          - EXPERIENCED
+          - ELITE
+      required:
+      - age
+      - gender
+      - level
+      - weightKilos
