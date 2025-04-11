@@ -1,6 +1,8 @@
 spring:
   application.name: HYPR
 
+  springdoc.swagger-ui.path: /swagger-ui.html
+
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}
