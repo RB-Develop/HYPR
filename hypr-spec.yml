@@ -55,6 +55,8 @@ components:
           - CROSSFIT
           - RUNNING
           - FITNESS
+        fullProgram:
+          type: boolean
         participants:
           type: integer
           format: int32
@@ -73,6 +75,7 @@ components:
           $ref: "#/components/schemas/WorkoutUser"
       required:
       - durationMinutes
+      - fullProgram
       - gear
       - participants
       - targetStimulus
@@ -94,11 +97,6 @@ components:
           - INTERMEDIATE
           - EXPERIENCED
           - ELITE
-      required:
-      - age
-      - gender
-      - level
-      - weightKilos
     Workout:
       type: object
       properties:
@@ -108,15 +106,15 @@ components:
           type: string
         duration:
           type: string
-        components:
+        stimulusExplanation:
+          type: string
+        sections:
           type: array
           items:
-            $ref: "#/components/schemas/WorkoutSession"
+            $ref: "#/components/schemas/WorkoutSections"
       required:
-      - components
-      - description
       - duration
-      - title
+      - sections
     WorkoutComponent:
       type: object
       properties:
@@ -139,25 +137,23 @@ components:
           type: string
         restDuration:
           type: string
-      required:
-      - exerciseDuration
-      - name
-    WorkoutSession:
+    WorkoutSections:
       type: object
       properties:
         name:
           type: string
-        description:
+        instruction:
           type: string
-        exerciseDuration:
-          type: string
-        targetRepetitions:
+        targetRounds:
           type: integer
           format: int32
+        workoutType:
+          type: string
+        duration:
+          type: string
         components:
           type: array
           items:
             $ref: "#/components/schemas/WorkoutComponent"
       required:
-      - exerciseDuration
-      - name
+      - components
