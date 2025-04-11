@@ -1,0 +1,3 @@
+### Test chat endpoint
+GET http://localhost:8080/ai/chat?question=What is Kotlin?
+Accept: application/json
